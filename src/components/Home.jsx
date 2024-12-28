@@ -20,7 +20,7 @@ const Home = () => {
             We don’t just teach concepts. We focus on hands-on,  Practical learning to ensure deep understanding.
             </p>
 
-            <button className="bg-blue-900 px-6 py-4 text-white rounded-lg font-bold w-1/3 hover:bg-orange-600 hover:text-white">
+            <button className="bg-blue-900 px-6 py-4 text-white rounded-lg font-bold lg:w-1/3 hover:bg-orange-600 hover:text-white">
             <Link to="/courses">  View All Courses  </Link>  
           </button>
           </div>
