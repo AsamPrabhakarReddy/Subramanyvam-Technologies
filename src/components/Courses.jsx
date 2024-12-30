@@ -162,6 +162,8 @@ const Courses = () => {
   return (
     <>
     <Navbar/>
+
+
     <div className="w-full p-8 shadow-xl">
       <div className="max-w-[1400px] lg:mx-auto mx-2">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 rounded-lg">

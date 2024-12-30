@@ -50,7 +50,7 @@ const Navbar = () => {
       {isMobile && (
         <div className="w-full text-center bg-gray-100 shadow-lg lg:hidden mx-4">
         <div className="flex flex-col p-4 gap-4">
-                <div className='text-xl cursor-pointer under text-blue-900 hover:font-bold'> <Link to="/home">Home</Link>   </div>   
+                {/* <div className='text-xl cursor-pointer under text-blue-900 hover:font-bold'> <Link to="/">Home</Link>   </div>    */}
                 <div className='text-xl cursor-pointer under text-blue-900 hover:font-bold'> <Link to="/courses">Courses</Link>   </div>
                 <div className='text-xl cursor-pointer under text-blue-900 hover:font-bold'> <Link to="/about-us">About</Link>   </div>
          
