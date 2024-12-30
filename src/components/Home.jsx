@@ -43,12 +43,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-
       {/* 2st component */}
 
 
-      <div className='w-full h-auto lg:mt-[0px] mt-[100px] bg-gray-300'>
+      <div className='w-full h-auto lg:mt-[0px] mt-[0px] bg-gray-300'>
         <div className="max-w-[1400px] lg:mx-auto  mx-[10px] h-auto  pb-10">
             <div className=" p-8 flex flex-col justify-center gap-[50px]">
               <h1 className="lg:text-[50px] text-[35px] font-bold text-center font-semibold leading-tight text-blue-900">
