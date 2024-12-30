@@ -4,6 +4,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa6";
 import { SiPaloaltosoftware } from "react-icons/si";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="bg-gray-600 select-none">
@@ -20,7 +21,7 @@ const Footer = () => {
                         className="flex flex-row items-center md:justify-start justify-center"
                       >
                        
-                        <h3 className="ml-1 text-2xl text-mainColor font-bold cursor-pointer">
+                        <h3 className="ml-1 text-2xl text-blue-900 font-bold cursor-pointer">
                           <span className="text-orange-600">Subramnyvam</span> Technologies
                         </h3>
                       </a>
@@ -29,8 +30,8 @@ const Footer = () => {
                   <div className="mb-12 md:mb-0">
                     <div className="flex items-center md:justify-start justify-center">
                       {/* <div className="h-4 w-1 bg-mainColor"></div> */}
-                      <h4 className=" text-sm leading-5 font-bold text-white tracking-wider uppercase flex md:justify-start justify-center items-start mt-1 text-footerLinks">
-                        Home
+                      <h4 className=" text-sm leading-5 font-bold text-white tracking-wider  flex md:justify-start justify-center items-start mt-1 text-footerLinks cursor-pointer  hover:text-orange-600">
+                      <Link to="/">Home</Link>
                       </h4>
                     </div>
                     
@@ -39,8 +40,8 @@ const Footer = () => {
                   <div className="mb-12 md:mb-0">
                     <div className="flex items-center md:justify-start justify-center">
                       {/* <div className="h-4 w-1 bg-mainColor"></div> */}
-                      <h4 className=" text-sm leading-5 text-white font-bold tracking-wider uppercase flex md:justify-start justify-center items-start mt-1 text-footerLinks">
-                        Courses
+                      <h4 className=" text-sm leading-5 text-white font-bold tracking-wider  flex md:justify-start justify-center items-start mt-1 text-footerLinks cursor-pointer  hover:text-orange-600">
+                         <Link to="/courses">Courses</Link>
                       </h4>
                     </div>
                     
@@ -49,8 +50,8 @@ const Footer = () => {
                   <div className="mb-12 md:mb-0">
                     <div className="flex items-center md:justify-start justify-center">
                       {/* <div className="h-4 w-1 bg-mainColor"></div> */}
-                      <h4 className="  text-sm leading-5 font-bold text-white tracking-wider uppercase flex md:justify-start justify-center items-start mt-1 text-footerLinks">
-                        About Us
+                      <h4 className="  text-sm leading-5 font-bold text-white tracking-wider  flex md:justify-start justify-center items-start mt-1 text-footerLinks cursor-pointer  hover:text-orange-600">
+                        <Link to="/about-us">About Us</Link>
                       </h4>
                     </div>
                     
@@ -59,8 +60,8 @@ const Footer = () => {
                   <div className="mb-12 md:mb-0">
                     <div className="flex items-center md:justify-start justify-center">
                       {/* <div className="h-4 w-1 bg-mainColor"></div> */}
-                      <h4 className="  text-sm leading-5 text-white font-bold tracking-wider uppercase flex md:justify-start justify-center items-start mt-1 text-footerLinks">
-                        Contact Us
+                      <h4 className="  text-sm leading-5 text-white font-bold tracking-wider  flex md:justify-start justify-center items-start mt-1 text-footerLinks cursor-pointer  hover:text-orange-600">
+                        <Link to="/contact-us">Contact Us</Link>
                       </h4>
                     </div>
                     
@@ -102,7 +103,7 @@ const Footer = () => {
                       />
                     </a>
                     <a
-                      href="https://www.linkedin.com/company/axseva/"
+                      href=""
                       className="flex justify-center items-center"
                     >
                       <FaGoogle

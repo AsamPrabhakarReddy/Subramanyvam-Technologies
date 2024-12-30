@@ -38,7 +38,7 @@ const Home = () => {
     </div>
 
 {/* 2st component */}
-
+{/* 
     <div className="w-full h-auto p-4">
       <div className="max-w-[1400px] lg:mx-auto mx-4">
         <h1 className="text-center text-3xl text-sky-700 font-bold">Our Services</h1>
@@ -46,7 +46,7 @@ const Home = () => {
 
         </div>
       </div>
-    </div>
+    </div> */}
 
     
     </>

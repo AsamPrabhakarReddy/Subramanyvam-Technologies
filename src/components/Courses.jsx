@@ -16,6 +16,7 @@ import django from "../assets/django.jpg"
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Courses = () => {
   const data = [
@@ -162,7 +163,7 @@ const Courses = () => {
     <>
     <Navbar/>
     <div className="w-full p-8 shadow-xl">
-      <div className="max-w-[1400px] lg:mx-auto mx-4">
+      <div className="max-w-[1400px] lg:mx-auto mx-2">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 rounded-lg">
           {data.map((course, index) => (
             <motion.div
@@ -189,7 +190,7 @@ const Courses = () => {
               </p>
               <div className="flex justify-center">
                 <button className="mt-4 px-4 py-2 bg-blue-500 text-white w-full rounded-lg hover:bg-blue-600">
-                  {course.button}
+                 <Link to="/contact-us">{course.button}</Link> 
                 </button>
               </div>
             </motion.div>
