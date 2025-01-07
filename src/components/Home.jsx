@@ -5,54 +5,98 @@ import board from "../assets/board.jpg"
 import lab from "../assets/lab.webp"
 import assit from "../assets/assit.jpg"
 import experts from "../assets/experts.webp"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 const Home = () => {
+
+  const slides = [
+    {
+      image:
+        "https://www.swg.com/se/wp-content/uploads/sites/45/2017/11/Services-product-training-banner.jpg",
+        // SupportOne,
+      heading: "Enhance Your Skills with Expert Training",
+      paragraph:
+        "Join industry-focused training programs that equip you with practical skills to thrive in your career.",
+      buttonText: "Contact US",
+      buttonLink: "/contact-us",
+    },
+    {
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVN8kCnO5T-S9qorFAQMWGR3ZI7LZf1tVRw&s",
+      heading: "Build Your Expertise with Specialized Courses",
+      paragraph:
+        "Gain in-depth knowledge and hands-on experience through tailored courses designed for professional growth.",
+        buttonText: "Contact US",
+        buttonLink: "/contact-us",
+    },
+    {
+      image:
+        "https://www.mightyrecruiter.com/wp-content/uploads/2017/05/Hiring_College_Students.jpg",
+      heading: "Get Trained, Get Hired",
+      paragraph:
+        "With personalized training sessions and real-world projects, we help you gain the skills employers are looking for.",
+        buttonText: "Contact US",
+        buttonLink: "/contact-us",
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Automatically change slides every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, [slides.length]);
 
 
   return (
     <>
      {/* 1st component */}
-     <div className="w-full p-8 bg-gradient-to-r from-gray-200 via-gray-400 to-gray-600 h-screen">
-        <div className="max-w-[1400px] lg:mx-auto mx-4 flex items-center justify-center h-full">
-          <div className="lg:grid grid-cols-2 gap-8 items-center justify-center h-full flex flex-col space-y-8 lg:space-y-0">
-            {/* Text Content */}
-            <div className="flex flex-col space-y-10 items-center lg:items-start">
-              {/* Heading */}
-              <h1 className="lg:text-5xl text-4xl font-bold text-gray-800 text-center lg:text-left">
-                100% Software Job Guarantee Institute
-              </h1>
-
-              {/* First Paragraph */}
-              <p className="lg:text-4xl text-2xl font-semibold text-sky-700 text-center lg:text-left">
-                We don’t just teach concepts. We focus on hands-on, Practical learning to ensure deep understanding.
-              </p>
-
-              {/* Button */}
-              <button className="bg-blue-900 px-6 py-4 text-white rounded-lg font-bold hover:bg-orange-600">
-                <Link to="/courses">View All Courses</Link>
-              </button>
-            </div>
-
-            {/* Image Section */}
-            <div className="flex justify-center items-center w-full h-full">
-              <img
-                src={logo}
-                alt="Institute Logo"
-                className="max-w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
+     <section className="relative h-[calc(100vh-90px)] w-full overflow-hidden select-none">
+      {/* Background Images */}
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence>
+          <motion.img
+            key={slides[currentIndex].image}
+            src={slides[currentIndex].image}
+            alt={`Slide ${currentIndex + 1}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0 object-cover w-full h-full"
+          />
+        </AnimatePresence>
       </div>
+
+      <div className="relative z-10 flex flex-col items-center justify-center h-full bg-black bg-opacity-50 text-white text-center px-4">
+        <h1 className="text-4xl font-semibold sm:text-5xl md:text-6xl uppercase ">
+          {slides[currentIndex].heading}
+        </h1>
+        <p className="mt-4 text-lg sm:text-xl md:text-2xl font-light">
+          {slides[currentIndex].paragraph}
+        </p>
+        <a
+          href={slides[currentIndex].buttonLink}
+          className="mt-8 inline-block px-6 py-3 border-[1px] border-navGray text-white rounded text-lg font-light transition hover:bg-opacity-90"
+        >
+          {slides[currentIndex].buttonText}
+        </a>
+      </div>
+    </section>
       {/* 2st component */}
 
 
       <div className='w-full h-auto lg:mt-[0px] mt-[0px] bg-gray-300'>
         <div className="max-w-[1400px] lg:mx-auto  mx-[10px] h-auto  pb-10">
-            <div className=" p-8 flex flex-col justify-center gap-[50px]">
+            <div className=" p-4 flex flex-col justify-center gap-[50px]">
               <h1 className="lg:text-[50px] text-[35px] font-bold text-center font-semibold leading-tight text-blue-900">
                 Why Choose Us
               </h1>
-              <div className="max-w-[1200px] lg:mx-auto mx-[20px] h-full grid lg:grid-cols-2 items-center gap-8 ">      
+              <div className="max-w-[1400px] lg:mx-auto mx-[20px] h-full grid lg:grid-cols-2 items-center gap-8 ">      
                 <div className="p-2 flex flex-col justify-center">
                   <h1 className="lg:text-[35px] text-[25px] font-semibold text-start text-blue-900 leading-tight ">
                   1. Interactive Classroom Learning with Projector
@@ -68,7 +112,7 @@ const Home = () => {
                 
               </div>
 
-              <div className="max-w-[1200px] lg:mx-auto mx-[20px] h-full grid lg:grid-cols-2 items-center gap-8">      
+              <div className="max-w-[1400px] lg:mx-auto mx-[20px] h-full grid lg:grid-cols-2 items-center gap-8">      
                 <div className="flex justify-center">
                   <img src={lab}/>
                 </div>
@@ -84,7 +128,7 @@ const Home = () => {
               </div>
 
 
-              <div className="max-w-[1200px] lg:mx-auto mx-[20px] h-full grid lg:grid-cols-2 items-center gap-8 ">      
+              <div className="max-w-[1400px] lg:mx-auto mx-[20px] h-full grid lg:grid-cols-2 items-center gap-8 ">      
                 <div className="p-2 flex flex-col justify-center">
                   <h1 className="lg:text-[35px] text-[25px] font-semibold text-start text-blue-900 leading-tight ">
                   3. Personalized Assistance for Doubt Clearance
@@ -100,7 +144,7 @@ const Home = () => {
                 
               </div>
 
-              <div className="max-w-[1200px] lg:mx-auto mx-[20px] h-full grid lg:grid-cols-2 items-center gap-8">      
+              <div className="max-w-[1400px] lg:mx-auto mx-[20px] h-full grid lg:grid-cols-2 items-center gap-8">      
                 <div className="flex justify-center">
                   <img src={experts}/>
                 </div>

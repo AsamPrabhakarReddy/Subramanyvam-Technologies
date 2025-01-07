@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="w-full p-8 shadow-xl">
+      <div className="w-full p-6 shadow-xl">
         <div className="max-w-[1400px] lg:mx-auto mx-4">
           {/* Desktop Header */}
           <div className="lg:flex items-center justify-between hidden">
