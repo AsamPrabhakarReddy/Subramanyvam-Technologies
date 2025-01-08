@@ -173,7 +173,7 @@ const Contact = () => {
       </div>
 
       {/* Google Maps Embed */}
-      <div className="w-full p-8 mt-8">
+      <div className="w-full p-8 mt-0">
         <div className="max-w-[1400px] lg:mx-auto mx-4">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.029569864421!2d79.47157347455716!3d13.65596519950625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d4b3d10c2be65%3A0xec60100e3b7b4969!2sSUBRAMANYVAM%20TECHNOLOGIES!5e0!3m2!1sen!2sin!4v1735556226257!5m2!1sen!2sin"
